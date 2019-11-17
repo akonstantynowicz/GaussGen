@@ -1,32 +1,47 @@
+import java.math.BigInteger;
+
 public class GenericMath<T extends Number> {
-    public T add(T a, T b){
-        if (a instanceof Double)
-            return (T) Double.valueOf(a.doubleValue() + b.doubleValue());
-        else if (a instanceof Float)
-            return (T) Float.valueOf(a.floatValue() + b.floatValue());
+        public T add(T a, T b){
+            if (a instanceof Double)
+                return (T) Double.valueOf(a.doubleValue() + b.doubleValue());
+            else if (a instanceof Float)
+                return (T) Float.valueOf(a.floatValue() + b.floatValue());
+        else if (a instanceof Ulamek) {
+            return (T) ((Ulamek) a).add((Ulamek) b);
+        }
         throw new IllegalArgumentException();
     }
-    public T subtract(T a, T b){
+
+    public T subtract(T a, T b) {
         if (a instanceof Double)
             return (T) Double.valueOf(a.doubleValue() - b.doubleValue());
         else if (a instanceof Float)
             return (T) Float.valueOf(a.floatValue() - b.floatValue());
+        else if (a instanceof Ulamek) {
+            return (T) ((Ulamek) a).subtract((Ulamek) b);
+        }
         throw new IllegalArgumentException();
     }
 
-    public T multiply(T a, T b){
+    public T multiply(T a, T b) {
         if (a instanceof Double)
             return (T) Double.valueOf(a.doubleValue() * b.doubleValue());
         else if (a instanceof Float)
             return (T) Float.valueOf(a.floatValue() * b.floatValue());
+        else if (a instanceof Ulamek) {
+            return (T) ((Ulamek) a).multiply((Ulamek) b);
+        }
         throw new IllegalArgumentException();
     }
 
-    public T divide(T a, T b){
+    public T divide(T a, T b) {
         if (a instanceof Double)
             return (T) Double.valueOf(a.doubleValue() / b.doubleValue());
         else if (a instanceof Float)
             return (T) Float.valueOf(a.floatValue() / b.floatValue());
+        else if (a instanceof Ulamek) {
+            return (T) ((Ulamek) a).divide((Ulamek) b);
+        }
         throw new IllegalArgumentException();
     }
 
@@ -41,6 +56,8 @@ public class GenericMath<T extends Number> {
                 return (T) Float.valueOf(-a.floatValue());
             else
                 return (T) Float.valueOf(a.floatValue());
+        } else if (a instanceof Ulamek) {
+            return (T) ((Ulamek) a).abs();
         }
         throw new IllegalArgumentException();
     }
@@ -56,6 +73,8 @@ public class GenericMath<T extends Number> {
                 return true;
             else
                 return false;
+        } else if (a instanceof Ulamek) {
+            return ((Ulamek) a).isGreaterThan((Ulamek) b);
         }
         throw new IllegalArgumentException();
     }
@@ -66,6 +85,9 @@ public class GenericMath<T extends Number> {
         }
         if (a[0] instanceof Float){
             return (T) Float.valueOf(0);
+        }
+        if (a[0] instanceof Ulamek) {
+            return (T) new Ulamek(0);
         }
         throw new IllegalArgumentException();
     }

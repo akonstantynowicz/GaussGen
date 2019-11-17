@@ -157,5 +157,7 @@ public class MojaMacierz <T extends Number>{
     public static void main(String[] args) throws IOException {
         Macierze m1 = new Macierze(N);
         System.out.println(obliczNorme(odejmijWektory(FG(m1.macierzF,m1.wektorF),m1.wektorF)));
+        System.out.println(obliczNorme(odejmijWektory(FG(m1.macierzD,m1.wektorD),m1.wektorD)));
+        System.out.println(obliczNorme(odejmijWektory(FG(m1.macierzU,m1.wektorU),m1.wektorU)));
     }
 }

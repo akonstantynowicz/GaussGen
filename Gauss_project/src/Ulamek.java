@@ -6,7 +6,7 @@ import com.sun.org.apache.bcel.internal.generic.BIPUSH;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-public class Ulamek {
+public class Ulamek extends Number{
 
     final private BigInteger licznik;
     final private BigInteger mianownik;
@@ -126,21 +126,32 @@ public class Ulamek {
         }
     }
 
-    public double toDouble() {
-        if (licznik == BigInteger.ZERO) {
-            return 0;
-        }
-        else {
-            return licznik.doubleValue() / mianownik.doubleValue();
-        }
-    }
-
     public String toStringUlamek() {
         return licznik + "/" + mianownik;
     }
 
     @Override
     public String toString() {
-        return "" + this.toDouble();
+        return "" + this.doubleValue();
+    }
+
+    @Override
+    public int intValue() {
+        return licznik.intValue() / mianownik.intValue();
+    }
+
+    @Override
+    public long longValue() {
+        return licznik.longValue() / mianownik.longValue();
+    }
+
+    @Override
+    public float floatValue() {
+        return licznik.floatValue() / mianownik.floatValue();
+    }
+
+    @Override
+    public double doubleValue() {
+        return licznik.doubleValue() / mianownik.doubleValue();
     }
 }
