@@ -6,7 +6,7 @@ import com.sun.org.apache.bcel.internal.generic.BIPUSH;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 
-public class Ulamek extends Number{
+public class Ulamek extends Number {
 
     final private BigInteger licznik;
     final private BigInteger mianownik;
@@ -21,7 +21,7 @@ public class Ulamek extends Number{
         String spilts[] = a.split("\\."); // split using decimal
         int b = spilts[1].length(); // find the decimal length
         BigInteger mianownik = BigDecimal.valueOf(Math.pow(10, b)).toBigInteger();
-        BigInteger licznik =  BigDecimal.valueOf(x * Math.pow(10, b)).toBigInteger();
+        BigInteger licznik = BigDecimal.valueOf(x * Math.pow(10, b)).toBigInteger();
 
         if (mianownik.equals(BigInteger.ZERO)) {
             throw new IllegalArgumentException("The denominator is zero.");
@@ -120,8 +120,7 @@ public class Ulamek extends Number{
 
         if (this.licznik.equals(u.licznik) && this.mianownik.equals(u.mianownik)) {
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
