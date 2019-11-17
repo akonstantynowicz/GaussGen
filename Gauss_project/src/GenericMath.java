@@ -1,11 +1,11 @@
 import java.math.BigInteger;
 
 public class GenericMath<T extends Number> {
-        public T add(T a, T b){
-            if (a instanceof Double)
-                return (T) Double.valueOf(a.doubleValue() + b.doubleValue());
-            else if (a instanceof Float)
-                return (T) Float.valueOf(a.floatValue() + b.floatValue());
+    public T add(T a, T b) {
+        if (a instanceof Double)
+            return (T) Double.valueOf(a.doubleValue() + b.doubleValue());
+        else if (a instanceof Float)
+            return (T) Float.valueOf(a.floatValue() + b.floatValue());
         else if (a instanceof Ulamek) {
             return (T) ((Ulamek) a).add((Ulamek) b);
         }
@@ -45,14 +45,14 @@ public class GenericMath<T extends Number> {
         throw new IllegalArgumentException();
     }
 
-    public T abs(T a){
-        if (a instanceof Double){
-            if (a.doubleValue()<0)
+    public T abs(T a) {
+        if (a instanceof Double) {
+            if (a.doubleValue() < 0)
                 return (T) Double.valueOf(-a.doubleValue());
             else
                 return (T) Double.valueOf(a.doubleValue());
-        }else if(a instanceof Float){
-            if(a.floatValue()<0)
+        } else if (a instanceof Float) {
+            if (a.floatValue() < 0)
                 return (T) Float.valueOf(-a.floatValue());
             else
                 return (T) Float.valueOf(a.floatValue());
@@ -62,14 +62,14 @@ public class GenericMath<T extends Number> {
         throw new IllegalArgumentException();
     }
 
-    public boolean isGreaterThan(T a, T b){
-        if (a instanceof Double){
-            if (a.doubleValue()>b.doubleValue())
+    public boolean isGreaterThan(T a, T b) {
+        if (a instanceof Double) {
+            if (a.doubleValue() > b.doubleValue())
                 return true;
             else
                 return false;
-        }else if(a instanceof Float){
-            if(a.floatValue()>b.doubleValue())
+        } else if (a instanceof Float) {
+            if (a.floatValue() > b.doubleValue())
                 return true;
             else
                 return false;
@@ -79,11 +79,11 @@ public class GenericMath<T extends Number> {
         throw new IllegalArgumentException();
     }
 
-    public T getZero(T[] a){
-        if (a[0] instanceof Double){
+    public T getZero(T[] a) {
+        if (a[0] instanceof Double) {
             return (T) Double.valueOf(0);
         }
-        if (a[0] instanceof Float){
+        if (a[0] instanceof Float) {
             return (T) Float.valueOf(0);
         }
         if (a[0] instanceof Ulamek) {
