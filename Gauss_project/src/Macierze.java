@@ -11,8 +11,8 @@ public class Macierze {
     public Double[][] macierzD;
     public Ulamek[][] macierzU;
 
-    public float[] wektorXF;
-    public double[] wektorXD;
+    public Float[] wektorXF;
+    public Double[] wektorXD;
     public Ulamek[] wektorXU;
 
     public Float[] wektorF;
@@ -25,8 +25,8 @@ public class Macierze {
         macierzD = new Double[N][N];
         macierzU = new Ulamek[N][N];
 
-        wektorXF = new float[N];
-        wektorXD = new double[N];
+        wektorXF = new Float[N];
+        wektorXD = new Double[N];
         wektorXU = new Ulamek[N];
 
         wektorF = new Float[N];

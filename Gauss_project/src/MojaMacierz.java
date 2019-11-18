@@ -1,9 +1,6 @@
 //Anna Konstantynowicz, gr. 3
 //Marcin Szczepaniak, gr. 3
 
-
-import static java.lang.Math.*;
-
 import java.io.IOException;
 
 public class MojaMacierz<T extends Number> {
@@ -45,7 +42,6 @@ public class MojaMacierz<T extends Number> {
                 }
             }
             if (A[i][j] != max) {
-                System.out.println("wiekszy");
                 for (int l = 0; l < N; l++) {
                     T tmp = A[i][l];
                     A[i][l] = A[p][l];
@@ -157,9 +153,11 @@ public class MojaMacierz<T extends Number> {
     }
 
     public static void main(String[] args) throws IOException {
-        Macierze m1 = new Macierze(N);
-        System.out.println(obliczNorme(odejmijWektory(FG(m1.macierzF, m1.wektorF), m1.wektorF)));
-        System.out.println(obliczNorme(odejmijWektory(FG(m1.macierzD, m1.wektorD), m1.wektorD)));
-        System.out.println(obliczNorme(odejmijWektory(FG(m1.macierzU, m1.wektorU), m1.wektorU)));
+        //Testy.H1();
+        //Testy.H2();
+        //Testy.H3();
+        //Testy.Q1();
+        //Testy.Q2();
+        //Testy.E1();
     }
 }
